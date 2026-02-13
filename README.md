@@ -22,7 +22,7 @@ This project demonstrates an end-to-end ML workflow including:
 - **Problem Type:** Binary / Multi-class Classification  
 - **Number of Instances:** ≥ 500  
 - **Number of Features:** ≥ 12  
-- **Target Variable:** <Target Column Name>
+- **Target Variable:** DEATH_EVENT
 
 The dataset contains structured tabular data suitable for supervised classification tasks.
 
