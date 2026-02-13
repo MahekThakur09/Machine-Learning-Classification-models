@@ -1,4 +1,4 @@
-# ML Assignment 2 – Classification Models & Streamlit Deployment
+# Classification Models & Streamlit Deployment
 
 ## a. Problem Statement
 
