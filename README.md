@@ -88,7 +88,7 @@ The deployed Streamlit web app includes:
 ## 🗂️ Project Structure
 ```
 project-folder/
-│-- app.py
+│-- streamlit_app.py
 │-- requirements.txt
 │-- README.md
 │-- model/
