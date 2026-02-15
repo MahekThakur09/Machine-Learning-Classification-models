@@ -7,23 +7,27 @@ Original file is located at
     https://colab.research.google.com/drive/18jilsx2-xg2Jcg_1SjmJqdIxCefgOw7Y
 """
 
-import xgboost as xgb
+from xgboost import XGBClassifier
+
 def run_model(X_train, X_test, y_train):
-    dtrain = xgb.DMatrix(X_train, label=y_train)
-    dtest = xgb.DMatrix(X_test, label=y_test)
-    params = {
-        'objective': 'binary:logistic',  # Binary classification
-        'eval_metric': 'logloss'         # Logarithmic loss metric
-    }
-    num_round = 100  # Number of boosting rounds
+    model = XGBClassifier(
+        objective="binary:logistic",
+        eval_metric="logloss",
+        n_estimators=100,
+        learning_rate=0.1,
+        max_depth=5,
+        use_label_encoder=False
+    )
 
-    model = xgb.train(params, dtrain, num_round)
+    model.fit(X_train, y_train)
 
-    y_pred = model.predict(dtest)
-    y_pred_binary = [1 if pred >= 0.5 else 0 for pred in y_pred]
+    # Predictions
+    y_pred = model.predict(X_test)
+
+    # Probabilities (for AUC)
     if hasattr(model, "predict_proba"):
         y_prob = model.predict_proba(X_test)[:, 1]
     else:
         y_prob = None
 
-    return y_pred_binary, y_prob
+    return y_pred, y_prob
