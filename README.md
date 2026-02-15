@@ -92,11 +92,11 @@ project-folder/
 │-- requirements.txt
 │-- README.md
 │-- model/
-│ │-- logistic_regression.pkl
-│ │-- decision_tree.pkl
-│ │-- knn.pkl
-│ │-- naive_bayes.pkl
-│ │-- random_forest.pkl
-│ │-- xgboost.pkl
+│ │-- logistic_regression.py
+│ │-- decision_tree.py
+│ │-- knn.py
+│ │-- naive_bayes.py
+│ │-- random_forest.py
+│ │-- xgboost.py
 
 ```
